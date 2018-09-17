@@ -1,0 +1,179 @@
+/*CVS - Bryan Lynn*/
+
+$content-spacing: 1.5em;
+$border-color: rgba(0,0,0,.125);
+$cvs-brand-color: #d43200;
+$gray: #444;
+
+.bg-dark{
+    background: #000!important;
+}
+
+.cvs{
+    padding-top: $content-spacing * 2;
+
+    .list-group{
+        li{
+            border-right:0;
+            border-left:0;
+            border-bottom:0;
+            border-radius: 0; 
+            padding-left: 0;
+            padding-right: $content-spacing;
+            &:hover{
+                z-index: 0;
+            }
+            span{
+                padding-left: 1em;
+                display: inline-block;
+                width: 100%;
+            }
+        }
+        
+        :first-child{
+            border-top:0;
+        }
+        :last-child{
+            border-bottom:1px solid $border-color
+        }
+        p,b,a,form,span,div{
+            border: 0!important;
+        }
+    }
+    .link-regular{
+        color:$cvs-brand-color;
+        font-weight:bold;
+        &:hover{
+            color:$cvs-brand-color;
+        }
+    }
+    &-link{
+        color:$cvs-brand-color;
+        text-decoration: none;
+        font-weight:bold;
+        display: block;
+        &:after{
+            content: " ";
+            width: 22px;
+            height: 36px;
+            background: url(/assets/caret.png) top center no-repeat;
+            position: absolute;
+            margin-left: 6px;
+            background-size: 56%;
+            margin-top: 3px;
+        }
+        &:hover{
+            color:$cvs-brand-color;
+        }
+    }
+    &-drug-search{
+        display: block;
+        width:auto;
+        input[type='text']{
+            border: 2px solid $border-color!important;
+            margin-right: 0px;
+            padding: $content-spacing / 3;
+            outline:0;
+        } 
+        button{
+            background: $cvs-brand-color;
+            color: #fff;
+            padding: $content-spacing / 3;
+            outline: 0;
+            margin-left: -5px;
+            border: 2px solid $cvs-brand-color;
+            width: 7em;
+        }
+    }
+    &-sidebar{
+        border: 2px solid $border-color;
+        text-align: center;
+        padding: 1em;
+        a{
+            text-align: left;
+            padding: 0.3em;
+        }
+        &-subtitle{
+            font-size:13px;
+            color:$gray;
+        }
+        &-caption{
+            font-size:15px;
+            margin-top: 5px;
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+    &-right{
+        text-align: right;
+        padding-right: 1.8em; 
+        padding-bottom: 0.8em;
+    }
+    &-orders{
+        font-size: 13px;
+        padding-bottom: 10px;
+        &-num{
+            text-decoration: underline;
+        }
+        &-status-red{
+            color: $cvs-brand-color;
+        }
+        &-status-black{
+            color: #000;
+        }
+    }
+    .desktop-hide{
+        display: none;
+    }
+}
+
+
+/*responsive*/
+@media (min-width: 321px){
+    .navbar-expand-lg>.container, .navbar-expand-lg>.container-fluid {
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    .navbar-expand-lg .navbar-nav {
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+}
+
+@media (max-width: 640px){
+    .navbar-dark{
+        display: none;
+    }
+    .d-inline-block {
+        background: #cd2202 url(/assets/header_mobile.png) top center no-repeat;
+        position: absolute;
+        width: 0;
+        top: 0;
+        height: 0;
+        z-index: 100;
+        padding: 0 0 41px 100%;
+        left: 0;
+    }
+    .mobile-activate{
+        padding: 0;
+    }
+    .cvs .col-8,.cvs .col-4{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    body{
+        padding-bottom: 12em;
+        width: 100%;
+    }
+    .mobile-hide{
+        display: none;
+    }
+    .cvs .desktop-hide{
+        display: block;
+    }
+}
